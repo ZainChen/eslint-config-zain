@@ -4,14 +4,17 @@
   "author": "ZainChen",
   "description": "eslint configuration for zain",
   "license": "MIT",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon --ignore node_modules/ --watch ./ -e js,json,md --debug -x 'npm run push'",
+    "push": "yalc push"
   },
   "dependencies": {
+    "eslint": "^8.26.0",
     "eslint-config-airbnb": "^19.0.4"
   },
   "devDependencies": {
-    "eslint": "^8.26.0"
+    "nodemon": "^2.0.20",
+    "yalc": "^1.0.0-pre.53"
   }
 }

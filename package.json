@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-zain",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "ZainChen",
   "description": "eslint configuration for zain",
   "license": "MIT",
@@ -13,24 +13,25 @@
     "push": "yalc push"
   },
   "dependencies": {
-    "eslint": "^8.26.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "prettier": "^2.7.1",
     "@typescript-eslint/eslint-plugin": "^5.33.1",
     "@typescript-eslint/parser": "^5.33.1",
+    "eslint": "^8.26.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^16.0.0",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^3.4.1",
     "eslint-import-resolver-webpack": "^0.13.2",
     "eslint-plugin-compat": "^4.0.2",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jest": "^26.8.3",
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-import-resolver-typescript": "^3.4.1",
-    "eslint-plugin-promise": "^6.0.0"
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "prettier": "^2.7.1"
   },
   "peerDependencies": {
     "eslint": ">=7 || >=8",
@@ -40,5 +41,13 @@
   "devDependencies": {
     "nodemon": "^2.0.20",
     "yalc": "^1.0.0-pre.53"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZainChen/eslint-config-zain.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ZainChen/eslint-config-zain/issues"
+  },
+  "homepage": "https://github.com/ZainChen/eslint-config-zain#readme"
 }

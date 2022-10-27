@@ -2,9 +2,59 @@
 
 ## 使用
 
+安装
+
 ```bash
 # 项目中只需引入这一个依赖包就可以了，不用加 eslint 和 prettier 或者其它配置包
 npm i -D eslint-config-zain
+```
+
+添加配置文件 `.eslintrc.js`，在 `.eslintignore` 中添加过滤文件和文件夹
+
+```js
+module.exports = {
+  extends: 'eslint-config-zain',
+  rules: {},
+  parserOptions: {
+    ecmaVersion: 2020,
+    sourceType: 'module',
+    project: './tsconfig.json',
+    tsconfigRootDir: __dirname,
+    createDefaultProgram: true,
+  },
+  settings: {
+    'import/resolver': {
+      node: {},
+      webpack: {
+        config: require.resolve('./configs/webpack.config.eslint.ts'),
+      },
+      typescript: {},
+    },
+  },
+}
+```
+
+`package.json` 文件增加脚本和配置
+
+```json
+{
+  "scripts": {
+    "lint": "dotenv -v NODE_ENV=development eslint . --ext .js,.jsx,.ts,.tsx"
+  },
+  "prettier": {
+    "overrides": [
+      {
+        "files": [
+          ".prettierrc",
+          ".eslintrc"
+        ],
+        "options": {
+          "parser": "json"
+        }
+      }
+    ]
+  }
+}
 ```
 
 ## 开发调试
@@ -38,7 +88,7 @@ nodemon
  --ignore node_modules/ # 忽略目录
  --watch ./ # 观察目录
  -C # 只在变更后执行，首次启动不执行命令(当前项目设置为首次启动执行)
- -e js,json,md # 监控指定后缀名的文件
+ -e js,ts,json,md # 监控指定后缀名的文件
  --debug # 调试
  -x "npm run push" # 自定义命令
 ```

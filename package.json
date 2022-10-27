@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-zain",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "ZainChen",
   "description": "eslint configuration for zain",
   "license": "MIT",
@@ -49,5 +49,14 @@
   "bugs": {
     "url": "https://github.com/ZainChen/eslint-config-zain/issues"
   },
-  "homepage": "https://github.com/ZainChen/eslint-config-zain#readme"
+  "homepage": "https://github.com/ZainChen/eslint-config-zain#readme",
+  "keywords": [
+    "eslint",
+    "prettier",
+    "typescript",
+    "react",
+    "airbnb",
+    "zain",
+    "ZainChen"
+  ]
 }

@@ -20,6 +20,11 @@ module.exports = {
     sourceType: 'module',
     project: './tsconfig.json',
   },
+  settings: {
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
+    },
+  },
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
@@ -43,6 +48,7 @@ module.exports = {
         unnamedComponents: 'function-expression',
       },
     ],
+    // 'no-console': 'off',
     'simple-import-sort/exports': 'error',
     'simple-import-sort/imports': [
       'error',
@@ -64,10 +70,5 @@ module.exports = {
         ],
       },
     ],
-  },
-  settings: {
-    'import/parsers': {
-      '@typescript-eslint/parser': ['.ts', '.tsx'],
-    },
   },
 }

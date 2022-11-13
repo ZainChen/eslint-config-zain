@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-zain",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "ZainChen",
   "description": "eslint configuration for zain",
   "license": "MIT",

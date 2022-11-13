@@ -78,7 +78,17 @@ yalc add eslint-config-zain --dev
 npm i
 ```
 
-3. 本地包热更原理说明
+3. 调试完成后，移除 `~/.yalc` 中的本地包，还原 `package.json` 文件和 `node_modules` 依赖包
+
+```bash
+# 移除本地包，还原 package.json 文件
+yalc remove eslint-config-zain
+
+# 还原依赖包 `node_modules` 依赖包
+npm i
+```
+
+4. 本地包热更原理说明
 
 - 使用 `nodemon` 监听指定文件修改，修改后触发 `yalc push` 发布更新本地包
 

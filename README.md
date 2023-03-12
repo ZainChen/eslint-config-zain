@@ -42,6 +42,8 @@ module.exports = {
     "lint": "dotenv -v NODE_ENV=development eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "prettier": {
+    "singleQuote": true,
+    "semi": false,
     "overrides": [
       {
         "files": [
@@ -101,4 +103,27 @@ nodemon
  -e js,ts,json,md # 监控指定后缀名的文件
  --debug # 调试
  -x "npm run push" # 自定义命令
+```
+
+## 发布依赖包
+
+1. 更新 `package.json` 中的版本号
+
+```json
+{
+  "version": "1.0.4",
+}
+```
+
+2. 添加 `npm` 用户（已经添加过就不用添加了）
+
+```bash
+# （mac）添加好后会在这个目录记录当前用户的 _authToken： /Users/[当前用户目录]/.npmrc
+npm adduser
+```
+
+3. 发布
+
+```bash
+npm publish
 ```

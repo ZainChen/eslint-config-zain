@@ -10,11 +10,11 @@ module.exports = {
     'plugin:prettier/recommended',
   ],
   plugins: ['simple-import-sort'],
+  parser: '@typescript-eslint/parser',
   env: {
     browser: true,
     node: true,
   },
-  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2020,
     sourceType: 'module',
@@ -29,25 +29,14 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-var-requires': 'off',
-    // Since React 17 and typescript 4.1 you can safely disable the rule
-    'react/react-in-jsx-scope': 'off',
+    'no-param-reassign': ['error', { props: false }],
     // A temporary hack related to IDE not resolving correct package.json
     'import/no-extraneous-dependencies': 'off',
+    // Since React 17 and typescript 4.1 you can safely disable the rule
+    'react/react-in-jsx-scope': 'off',
     'import/no-unresolved': 'error',
     'import/prefer-default-export': 'off',
-    'no-param-reassign': ['error', { props: false }],
-    'prettier/prettier': ['error', { singleQuote: true, semi: false }],
-    'react/function-component-definition': [
-      'error',
-      {
-        namedComponents: [
-          'function-declaration',
-          'function-expression',
-          'arrow-function',
-        ],
-        unnamedComponents: 'function-expression',
-      },
-    ],
+    'prettier/prettier': ['error', { singleQuote: true, semi: false, printWidth: 120 }],
     // 'no-console': 'off',
     'simple-import-sort/exports': 'error',
     'simple-import-sort/imports': [

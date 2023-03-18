@@ -26,6 +26,7 @@ module.exports = {
     'import/resolver': {
       node: {},
       webpack: {
+        // 这行根据自己的配置可加可不加
         config: require.resolve('./configs/webpack.config.eslint.ts'),
       },
       typescript: {},
@@ -40,21 +41,6 @@ module.exports = {
 {
   "scripts": {
     "lint": "dotenv -v NODE_ENV=development eslint . --ext .js,.jsx,.ts,.tsx"
-  },
-  "prettier": {
-    "singleQuote": true,
-    "semi": false,
-    "overrides": [
-      {
-        "files": [
-          ".prettierrc",
-          ".eslintrc"
-        ],
-        "options": {
-          "parser": "json"
-        }
-      }
-    ]
   }
 }
 ```
@@ -73,7 +59,7 @@ npm run start
 # 全局安装 yalc
 npm i yalc -g
 
-# 将本地包添加到其它联调项目中
+# 将本地包添加到其它联调项目中（这条命令在其它项目中执行）
 yalc add eslint-config-zain --dev
 
 # 安装本地包 eslint-config-zain 中的依赖（当前项目更新依赖包后，其它项目中都需要再执行一次）

@@ -2,6 +2,8 @@
 
 # eslint-config-zain
 
+用来给 `React`、`Typescript` 添加 `Eslint` 规则
+
 ## 使用
 
 安装
@@ -42,7 +44,8 @@ module.exports = {
 ```json
 {
   "scripts": {
-    "lint": "dotenv -v NODE_ENV=development eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
   }
 }
 ```

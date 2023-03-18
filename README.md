@@ -2,6 +2,8 @@ English | [简体中文](./README.CN.md)
 
 # eslint-config-zain
 
+Add `Eslint` rules for `React` and `Typescript`.
+
 ## Usage
 
 Installation
@@ -42,7 +44,8 @@ Add script and configuration to `package.json`:
 ```json
 {
   "scripts": {
-    "lint": "dotenv -v NODE_ENV=development eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
   }
 }
 ```

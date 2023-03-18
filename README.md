@@ -1,15 +1,17 @@
+English | [简体中文](./README.CN.md)
+
 # eslint-config-zain
 
-## 使用
+## Usage
 
-安装
+Installation
 
 ```bash
-# 项目中只需引入这一个依赖包就可以了，不用加 eslint 和 prettier 或者其它配置包
+# You only need to install this package, no need to install eslint, prettier or other configuration packages
 npm i -D eslint-config-zain
 ```
 
-添加配置文件 `.eslintrc.js`，在 `.eslintignore` 中添加过滤文件和文件夹
+Add configuration file `.eslintrc.js` and filter files and folders in `.eslintignore`:
 
 ```js
 module.exports = {
@@ -26,7 +28,7 @@ module.exports = {
     'import/resolver': {
       node: {},
       webpack: {
-        // 这行根据自己的配置可加可不加
+        // This line can be added or not according to your own configuration
         config: require.resolve('./configs/webpack.config.eslint.ts'),
       },
       typescript: {},
@@ -35,7 +37,7 @@ module.exports = {
 }
 ```
 
-`package.json` 文件增加脚本和配置
+Add script and configuration to `package.json`:
 
 ```json
 {
@@ -45,55 +47,55 @@ module.exports = {
 }
 ```
 
-## 开发调试
+## Development
 
-1. 将包发布到  `~/.yalc` 中并监听文件修改
+1. Publish the package to `~/.yalc` and listen for file modifications:
 
 ```
 npm run start
 ```
 
-2. 其它项目中使用 `~/.yalc` 中的本地包调试
+2. Debugging local packages from `~/.yalc` is used in other projects.
 
 ```bash
-# 全局安装 yalc
+# Install yalc globally
 npm i yalc -g
 
-# 将本地包添加到其它联调项目中（这条命令在其它项目中执行）
+# Add the local package to other debugging projects (run this command in other projects)
 yalc add eslint-config-zain --dev
 
-# 安装本地包 eslint-config-zain 中的依赖（当前项目更新依赖包后，其它项目中都需要再执行一次）
+# Install the dependencies in the local package eslint-config-zain (after the dependencies in the current project are updated, you need to execute this command again in other projects)
 npm i
 ```
 
-3. 调试完成后，移除 `~/.yalc` 中的本地包，还原 `package.json` 文件和 `node_modules` 依赖包
+3. After debugging is complete, remove the local packages in `~/.yalc`, restore the `package.json` file, and the `node_modules` dependency package.
 
 ```bash
-# 移除本地包，还原 package.json 文件
+# Remove the local package and restore the package.json file
 yalc remove eslint-config-zain
 
-# 还原依赖包 `node_modules` 依赖包
+# Restore the `node_modules` dependencies
 npm i
 ```
 
-4. 本地包热更原理说明
+4. Local package hot update principle explanation:
 
-- 使用 `nodemon` 监听指定文件修改，修改后触发 `yalc push` 发布更新本地包
+- Using `nodemon` to watch for modifications to specific files, triggering `yalc push` to publish updates to the local package after modification.
 
 ```bash
-# nodemon 监视文件更改并执行对应的命令常用参数（可以通过 nodemon -h 查看更多命令）
+# nodemon commonly used parameters for monitoring file changes and executing corresponding commands (more commands can be viewed through nodemon -h)
 nodemon
- --ignore node_modules/ # 忽略目录
- --watch ./ # 观察目录
- -C # 只在变更后执行，首次启动不执行命令(当前项目设置为首次启动执行)
- -e js,ts,json,md # 监控指定后缀名的文件
- --debug # 调试
- -x "npm run push" # 自定义命令
+ --ignore node_modules/ # Ignore directories
+ --watch ./ # Watch directories
+ -C # Only execute after the change, do not execute the command when first starting up (this project is set to execute when first starting up)
+ -e js,ts,json,md # Monitor files with specified suffixes
+ --debug # Debug
+ -x "npm run push" # Customize commands
 ```
 
-## 发布依赖包
+## Publishing Dependency Packages
 
-1. 更新 `package.json` 中的版本号
+1. Update the version number in the `package.json`.
 
 ```json
 {
@@ -101,14 +103,14 @@ nodemon
 }
 ```
 
-2. 添加 `npm` 用户（已经添加过就不用添加了）
+2. Add `npm` user (if already added, there is no need to add it again).
 
 ```bash
-# （mac）添加好后会在这个目录记录当前用户的 _authToken： /Users/[当前用户目录]/.npmrc
+# (Mac) After adding, the _authToken of the current user will be recorded in this directory: /Users/[current user directory]/.npmrc
 npm adduser
 ```
 
-3. 发布
+3. Publish
 
 ```bash
 npm publish
